@@ -12,6 +12,7 @@ export class EpisodeScheduleComponent implements OnInit {
   showList:boolean;
   episodeList:Episode[];
   selectedEpisode:Episode;
+  categorizedEpisodes:Map<string , Episode[]> = new Map<string , Episode[]>();
   constructor(private tvService:TelevisionService) {
     
    }
@@ -25,7 +26,6 @@ export class EpisodeScheduleComponent implements OnInit {
     this.getAllEpisodes();
     this.showList = true;
   }
-
   selectEpisode(episode)
   {
     this.selectedEpisode = episode; 
@@ -44,6 +44,7 @@ export class EpisodeScheduleComponent implements OnInit {
         console.log("Inside success");
         this.episodeList = success as Episode[];
         console.log(this.episodeList);
+        this.categoriseEpisodes();
       },
       (error)=>{
         console.log("Inside error");
@@ -53,6 +54,27 @@ export class EpisodeScheduleComponent implements OnInit {
         console.log("Api call finished");
       }
     );
+  }
+
+  categoriseEpisodes()
+  {
+    this.categorizedEpisodes = new Map<string , Episode[]>();
+    console.log(this.episodeList);
+    for(let i = 0 ; i < this.episodeList.length ; i++)
+    {
+      for(let genre of this.episodeList[i].show.genres)
+      {
+        let episodes:Episode[] = this.categorizedEpisodes.get(genre);
+        if(episodes == null)
+        {
+          episodes = [];
+        }
+        episodes.push(this.episodeList[i]);
+        this.categorizedEpisodes.set(genre , episodes);
+      }
+    }
+
+    console.log(this.categorizedEpisodes);
   }
 
 }
