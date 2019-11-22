@@ -1,1 +1,70 @@
 /* You can add global styles to this file, and also import other style files */
+.viewport-height{
+    background-size: cover;
+    height:111vh;
+}
+.bg{
+   
+   background-color: white;
+    background-size: cover;
+    
+}
+.bg-gray{
+    background-color: gray;
+}
+.bg-blue{
+    background-color: rgba(25, 68, 124, 0.719);
+}
+.bg-yellow{
+    background-color: rgba(255, 166, 0, 0.61);
+}
+.bg-custom-white{
+    background-color: white;
+}
+.rounded-border{
+    border-radius: 1.5em;
+}
+.large-font{
+    font-size: 5em;
+    opacity: 1;
+}
+body{
+    overflow-x:hidden; 
+    
+}
+.arrow{
+    
+    padding-top: 0;
+    margin-top:0;
+    color:rgb(55, 55, 199);
+    /* text-shadow:  2px 2px 2px rgb(58, 58, 58); */
+}
+.arrow:hover{
+    color: rgb(255, 174, 0);
+}
+
+.faded_background{
+    overflow: hidden;
+    background: rgba(0,0,0,0.7);
+}
+.bg-border-light{
+    border: 1px solid gray;
+}
+
+.fixed{
+    position:fixed;
+}
+.small-hr{
+    width:10%;
+    height:1px;
+    border-radius:5%;
+    border: 1px solid rgb(66, 66, 66);
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.pointer {cursor: pointer;}
+.cursor-disable{cursor: no-drop;}
+
+
+
