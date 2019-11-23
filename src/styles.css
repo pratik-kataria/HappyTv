@@ -38,10 +38,7 @@ html,body
     font-size: 5em;
     opacity: 1;
 }
-body{
-    overflow-x:hidden; 
-    
-}
+
 .arrow{
     
     padding-top: 0;
@@ -88,8 +85,8 @@ blockquote {
     font-size: 18px;
     font-style: italic;
     width: 500px;
-    margin: 0.25em 0;
-    padding: 0.35em 40px;
+    /* margin: 0.25em 0; */
+    padding: 0.35em 10px;
     line-height: 1.45;
     position: relative;
     color: white;
