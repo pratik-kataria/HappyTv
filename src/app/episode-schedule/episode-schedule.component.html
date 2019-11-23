@@ -58,7 +58,8 @@
                 <span class="mr-4"><b class="mr-3">Season:</b>{{episode.season}}</span>
                 <span><b class="mr-3">Episode:</b>{{episode.number}}</span>
               </p>
-              <p><b>Rating: </b></p>
+              <p *ngIf="!episode.show.rating || !episode.show.rating.average"><b>Rating: </b>NA</p>
+              <p *ngIf="episode.show.rating && episode.show.rating.average"><b>Rating: </b>{{episode.show.rating.average}}</p>
 
             </div>
 
