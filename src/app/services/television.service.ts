@@ -12,7 +12,7 @@ export class TelevisionService{
     constructor(private http:HttpClient){
 
     }
-    private baseUrl:string = "http://api.tvmaze.com";
+    private baseUrl:string = "https://api.tvmaze.com";
 
     getAllEpisodes():Observable<any>
     {
