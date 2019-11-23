@@ -42,20 +42,13 @@ export class EpisodeScheduleComponent implements OnInit {
     this.tvService.getAllEpisodes()
     .subscribe(
       (success)=>{
-        console.log("Inside success");
         this.episodeList = success as Episode[];
-        console.log(this.episodeList);
         this.filterEpisodesWithCurrentUSTime();
-        console.log("filtered Ldist");
-        console.log(this.filteredList);
         this.categoriseEpisodes(this.episodeList);
       },
       (error)=>{
-        console.log("Inside error");
-        console.log(error);
       },
       ()=>{
-        console.log("Api call finished");
       }
     );
   }
@@ -87,8 +80,6 @@ export class EpisodeScheduleComponent implements OnInit {
         this.categorizedEpisodes.set(genre , episodes);
       }
     }
-
-    console.log(this.categorizedEpisodes);
   }
 
 

@@ -18,34 +18,7 @@ export class EpisodeDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.selectedEpisode);
     this.generateGenreString();
-    console.log("inside detailed component");
-    console.log("airstamp: "+this.selectedEpisode.airstamp);
-    // getting the indian time for the show...
-    let date:Date = new Date(this.selectedEpisode.airstamp);
-    console.log("airstamp date:"+date);
-    let today:Date = new Date();
-    console.log("today: "+today);
-    console.log("today utc: "+today.toUTCString());
-    let addedMilis = Date.parse(today.toUTCString()) + (-5*60*1000);
-    let addedTime:Date = new Date(addedMilis);
-    console.log(addedTime);
-    if(Date.parse(addedTime.toUTCString()) > Date.parse(today.toUTCString()))
-    {
-      console.log("greater");
-    }
-    else if(Date.parse(addedTime.toUTCString()) < Date.parse(today.toUTCString()))
-    {
-      console.log("Smaller");
-    }
-    else{
-      console.log("equal");
-    }
-    // Date.parse;
-
-    // take a date..
-
   }
 
   generateGenreString()
