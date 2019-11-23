@@ -10,7 +10,7 @@ export class Episode {
     airdate: Date;              // can be date or string
     airtime: Time;            // time or string
     airstamp: string;
-    runtime: string;
+    runtime: number;
     image: string;
     summary: string;
     show: Show;

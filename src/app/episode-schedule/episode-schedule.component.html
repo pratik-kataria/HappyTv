@@ -1,18 +1,30 @@
 <div *ngIf="showList" class="custom-purple pt-4">
   <div class="container">
+    <div *ngIf = "categorizedEpisodes && categorizedEpisodes.size == 0" class="pb-3">
+        <div class="card text-center my-4 col-md-8 offset-md-2 col-sm-12 col-12 ">
+      
+            <div class="card-body px-lg-5 pt-0">
+                <div class="my-5 py-5 ">
+                  <img src="./assets/sad_emoji.png" alt="sad_face" class="rounded-circle" style = "width:90px;height:90px">
+                  
+                  <h3 class="mt-3"><em>Please check your internet connectivity...</em></h3>
+                </div>
+            </div>
+          </div>
+    </div>
     <div *ngFor="let map of categorizedEpisodes | keyvalue" class="pb-3">
       <!-- genre heading -->
-      
+
 
       <!-- cards -->
-      <div class="row pb-4 pr-4" style="background-color: rgb(228, 208, 208);">
+      <div *ngIf = "map.key && map.value && map.value.length > 0" class="row pb-4 pr-4" style="background-color: rgb(228, 208, 208);">
           <div class="container-fluid text-center py-4 ml-3" style="margin: 0px; padding: 0px;">
               <h1><strong>{{map.key}}</strong></h1>
               <div class="horizontal-line"></div>
             </div>
           <div class="col-md-4 mt-2 " *ngFor="let episode of map.value">
               <!-- Card Narrower -->
-              <div class="card card-cascade narrower mt-4 ml-3" style="width: 21rem;box-shadow: 5px 5px 2px grey;">
+              <div *ngIf="episode.show.image" class="card card-cascade narrower mt-4 ml-3" style="width: 21rem;box-shadow: 5px 5px 2px grey;">
       
                 <!-- Card image -->
                 <div class="view view-cascade overlay">
@@ -49,7 +61,7 @@
       
                 <!-- Card footer -->
                 <div class="card-footer text-muted ">
-                  <span class="text-dark mr-3"><b>Time:</b></span>09:00 - 09:30
+                  <span class="text-dark mr-3"><b>Time:</b></span>{{episode.airstamp | date: 'hh:mm a' : 'GMT-5'}} - {{getEndTime( episode.airstamp , episode.runtime) | date:'hh:mm a' : 'GMT-5'}}
                 </div>
       
                 <div class="card-footer" style="margin: 0px; padding:0px">
@@ -69,5 +81,5 @@
 </div>
 
 <div *ngIf="!showList">
-  <app-episode-details [selectedEpisode]="selectedEpisode"></app-episode-details>
+  <app-episode-details [selectedEpisode]="selectedEpisode" (backEvent)="toggleView()"></app-episode-details>
 </div>

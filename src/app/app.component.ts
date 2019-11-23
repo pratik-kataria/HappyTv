@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { PlatformLocation } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'happy-tv';
+
+
+  time = new Date();
+  constructor(location: PlatformLocation) {
+    location.onPopState(() => {
+       alert(window.location);
+    }); }
+  ngOnInit() {
+      setInterval(() => {
+        this.time = new Date();
+      }, 1000);
+  }
+
+  
 }

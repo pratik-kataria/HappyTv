@@ -16,7 +16,7 @@ export class TelevisionService{
 
     getAllEpisodes():Observable<any>
     {
-        return this.http.get(this.baseUrl+"/schedule?country=US");
+        return this.http.get(this.baseUrl+"/schedule");
     }
 
 }

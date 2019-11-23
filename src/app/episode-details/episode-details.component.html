@@ -1,135 +1,140 @@
-<div class="container mt-5" id="main-container">
-  <div class="row">
-    <!-- image for the show -->
-    <div class="col-md-4">
-      <div *ngIf="selectedEpisode.show.image.original">
-        <img class="img-fluid" [src]="selectedEpisode.show.image.original" alt="Card image cap">
-
-      </div>
-      <!-- if show img not available -->
-      <div *ngIf="!selectedEpisode.show.image.original">
-        <img class="img-fluid" src="assets/no-image.jpg" alt="Card image cap">
-      </div>
+<div class="container-fluid bg-white">
+  <div class="container bg-white mt-5" id="main-container">
+    <div class="row ml-0 pl-0 mb-3">
+      <a class="btn text-dark" (click) = "goBack()"><i class="fas fa-2x fa-arrow-circle-left my-0"></i><span class="ml-2">Go Back</span></a>
     </div>
-    <!-- right side of the show -->
-    <div class="col-md-8">
-      <!-- show details -->
-      <!-- header -->
-      <div class="text-center">
-        <h2>{{selectedEpisode.show.name}}</h2>
-      </div>
-      <hr>
-      <!-- details -->
-      <div>
-        <!-- summary -->
-        <div class="text-justify" [innerHTML]="selectedEpisode.show.summary"></div>
+    <div class="row">
+      <!-- image for the show -->
+      <div class="col-md-4">
+        <div *ngIf="selectedEpisode.show.image.original">
+          <img class="img-fluid" [src]="selectedEpisode.show.image.original" alt="Card image cap">
 
-        <div class="row card-footer">
-          <div class="col-md-4">
-            <div clas="mt-2">
-              <span>
-                <h5><b>Premiered:</b></h5>
-              </span>
-              <p>{{selectedEpisode.show.premiered | date: mediumDate}}</p>
-            </div>
-
-            <div clas="mt-3">
-              <span>
-                <h5><b>Language:</b></h5>
-              </span>
-              <p>{{selectedEpisode.show.language }}</p>
-            </div>
-
-            <div clas="mt-3">
-              <span>
-                <h5><b>Genres:</b></h5>
-              </span>
-              <p>{{genreString}}</p>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div clas="mt-2" *ngIf="selectedEpisode.show.schedule">
-              <span>
-                <h5><b>Airs On Every:</b></h5>
-              </span>
-              <ul style="padding: 0px 0px 5px 20px;" *ngFor="let day of selectedEpisode.show.schedule.days">
-                <li>{{day}}</li>
-              </ul>
-            </div>
-
-            <div clas="mt-2">
-              <span>
-                <h5><b>Time:</b></h5>
-              </span>
-              <p>{{selectedEpisode.airstamp | date: 'shortTime':'GMT-5'}}</p>
-            </div>
-
-            <!-- rating will be here -->
-          </div>
-
-          <div class="col-md-4">
-            <div clas="mt-2" *ngIf="selectedEpisode.show.network">
-              <span>
-                <h5><b>Network:</b></h5>
-              </span>
-              <p>{{selectedEpisode.show.network.name}}</p>
-            </div>
-
-            <div clas="mt-2">
-              <span>
-                <h5><b>Runtime:</b></h5>
-              </span>
-              <p>{{selectedEpisode.show.runtime}} minutes</p>
-            </div>
-          </div>
         </div>
-
-      </div>
-    </div>
-
-    <!-- for the episode details -->
-    <div class="container my-4 pt-2" id="episode-container">
-      <div class="text-center">
-        <h2>Episode Name - <b><span>{{selectedEpisode.name}}</span></b></h2>
-      </div>
-      <!-- hr -->
-      <div class="horizontal-line"></div>
-
-      <div class="row mt-2">
-        <div class="col-md-6">
-          <!--  episode summary -->
-          <div class="text-justify" [innerHTML]="selectedEpisode.summary"></div>
+        <!-- if show img not available -->
+        <div *ngIf="!selectedEpisode.show.image.original">
+          <img class="img-fluid" src="assets/no-image.jpg" alt="Card image cap">
         </div>
-        <div class="offset-md-2 col-md-4">
-
-          <div clas="mt-3">
-            <span>
-              <h5><b>Season:</b></h5>
-            </span>
-            <p>{{selectedEpisode.season}}</p>
-          </div>
-
-          <div clas="mt-3">
-            <span>
-              <h5><b>Episode:</b></h5>
-            </span>
-            <p>{{selectedEpisode.number}}</p>
-          </div>
+      </div>
+      <!-- right side of the show -->
+      <div class="col-md-8">
+        <!-- show details -->
+        <!-- header -->
+        <div class="text-center">
+          <h2>{{selectedEpisode.show.name}}</h2>
         </div>
-        <!-- <div class="col-md-2">
-            <div clas="mt-3">
+        <hr>
+        <!-- details -->
+        <div>
+          <!-- summary -->
+          <div class="text-justify" [innerHTML]="selectedEpisode.show.summary"></div>
+
+          <div class="row card-footer">
+            <div class="col-md-4">
+              <div clas="mt-2">
                 <span>
-                  <h5><b>Episode:</b></h5>
+                  <h5><b>Premiered:</b></h5>
                 </span>
-                <p>{{selectedEpisode.number}}</p>
+                <p>{{selectedEpisode.show.premiered | date: mediumDate}}</p>
               </div>
-        </div>   -->
+
+              <div clas="mt-3">
+                <span>
+                  <h5><b>Language:</b></h5>
+                </span>
+                <p>{{selectedEpisode.show.language }}</p>
+              </div>
+
+              <div clas="mt-3">
+                <span>
+                  <h5><b>Genres:</b></h5>
+                </span>
+                <p>{{genreString}}</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div clas="mt-2" *ngIf="selectedEpisode.show.schedule">
+                <span>
+                  <h5><b>Airs On Every:</b></h5>
+                </span>
+                <ul style="padding: 0px 0px 5px 20px;" *ngFor="let day of selectedEpisode.show.schedule.days">
+                  <li>{{day}}</li>
+                </ul>
+              </div>
+
+              <div clas="mt-2">
+                <span>
+                  <h5><b>Time:</b></h5>
+                </span>
+                <p>{{selectedEpisode.airstamp | date: 'shortTime':'GMT-5'}}</p>
+              </div>
+
+              <!-- rating will be here -->
+            </div>
+
+            <div class="col-md-4">
+              <div clas="mt-2" *ngIf="selectedEpisode.show.network">
+                <span>
+                  <h5><b>Network:</b></h5>
+                </span>
+                <p>{{selectedEpisode.show.network.name}}</p>
+              </div>
+
+              <div clas="mt-2">
+                <span>
+                  <h5><b>Runtime:</b></h5>
+                </span>
+                <p>{{selectedEpisode.show.runtime}} minutes</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
+      <!-- for the episode details -->
+      <div class="container my-4 pt-2" id="episode-container">
+        <div class="text-center">
+          <h2>Episode Name - <b><span>{{selectedEpisode.name}}</span></b></h2>
+        </div>
+        <!-- hr -->
+        <div class="horizontal-line"></div>
+
+        <div class="row mt-2">
+          <div class="col-md-6">
+            <!--  episode summary -->
+            <div class="text-justify" [innerHTML]="selectedEpisode.summary"></div>
+          </div>
+          <div class="offset-md-2 col-md-4">
+
+            <div clas="mt-3">
+              <span>
+                <h5><b>Season:</b></h5>
+              </span>
+              <p>{{selectedEpisode.season}}</p>
+            </div>
+
+            <div clas="mt-3">
+              <span>
+                <h5><b>Episode:</b></h5>
+              </span>
+              <p>{{selectedEpisode.number}}</p>
+            </div>
+          </div>
+          <!-- <div class="col-md-2">
+                  <div clas="mt-3">
+                      <span>
+                        <h5><b>Episode:</b></h5>
+                      </span>
+                      <p>{{selectedEpisode.number}}</p>
+                    </div>
+              </div>   -->
+        </div>
 
 
+
+      </div>
     </div>
-  </div>
 
+  </div>
 </div>
