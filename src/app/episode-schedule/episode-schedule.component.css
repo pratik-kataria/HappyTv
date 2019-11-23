@@ -1,3 +1,20 @@
 .card:hover{
     -webkit-transform: scale(1.04);
 }
+
+.genre{
+    /* background-color: rgb(124, 89, 35); */
+    background-color: white;
+}
+
+.horizontal-line{
+    width:80px;
+    border: 3px solid black; 
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.custom-purple{
+    background-color: #880e4f;
+}

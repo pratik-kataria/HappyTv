@@ -1,68 +1,73 @@
-<div *ngIf = "showList" class="bg-gray pb-3"> 
+<div *ngIf="showList" class="custom-purple pt-4">
   <div class="container">
-        <div class="row">
-          <div class="col-md-4 mt-2 d-flex align-items-stretch" *ngFor="let episode of episodeList">
-            <!-- Card Narrower -->
-            <div class="card card-cascade narrower mt-4" style="width: 21rem;">
+    <div *ngFor="let map of categorizedEpisodes | keyvalue" class="pb-3">
+      <!-- genre heading -->
       
-              <!-- Card image -->
-              <div class="view view-cascade overlay">
-                <!--  if show img is available, use it-->
-                <div *ngIf="episode.show.image.medium">
+
+      <!-- cards -->
+      <div class="row pb-4 pr-4" style="background-color: rgb(228, 208, 208);">
+          <div class="container-fluid text-center py-4 ml-3" style="margin: 0px; padding: 0px;">
+              <h1><strong>{{map.key}}</strong></h1>
+              <div class="horizontal-line"></div>
+            </div>
+          <div class="col-md-4 mt-2 " *ngFor="let episode of map.value">
+              <!-- Card Narrower -->
+              <div class="card card-cascade narrower mt-4 ml-3" style="width: 21rem;box-shadow: 5px 5px 2px grey;">
+      
+                <!-- Card image -->
+                <div class="view view-cascade overlay">
+                  <!--  if show img is available, use it-->
+                  <div *ngIf="episode.show.image.medium">
                     <img class="card-img-top" [src]="episode.show.image.medium" alt="Card image cap" style="height:350px;">
-                    
-                </div>
-                <!-- if show img not available -->
-                <div *ngIf="!episode.show.image.medium">
+      
+                  </div>
+                  <!-- if show img not available -->
+                  <div *ngIf="!episode.show.image.medium">
                     <img class="card-img-top" src="assets/no-image.jpg" alt="Card image cap" style="height:350px;">
-                
+      
+                  </div>
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
                 </div>
-                <a>
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
       
-              <!-- Card content -->
-              <div class="card-body card-body-cascade" style="position: relative;">
+                <!-- Card content -->
+                <div class="card-body card-body-cascade" style="position: relative;">
       
-                <!-- Label -->
-                <h5 class="pink-text pb-2 pt-1"><i class="fas fa-tv pr-1"></i>{{episode.name}}</h5>
-                <!-- Title -->
-                <!-- <h4 class="font-weight-bold card-title">Show</h4> -->
-                <!-- Text -->
-                <p>
-                  <span class="mr-4"><b class="mr-3">Season:</b>{{episode.season}}</span>
-                  <span><b class="mr-3">Episode:</b>{{episode.number}}</span>
-                </p>
-                <p><b>Rating: </b></p>
+                  <!-- Label -->
+                  <h5 class="pink-text pb-2 pt-1"><i class="fas fa-tv pr-1"></i>{{episode.name}}</h5>
+                  <!-- Title -->
+                  <!-- <h4 class="font-weight-bold card-title">Show</h4> -->
+                  <!-- Text -->
+                  <p>
+                    <span class="mr-4"><b class="mr-3">Season:</b>{{episode.season}}</span>
+                    <span><b class="mr-3">Episode:</b>{{episode.number}}</span>
+                  </p>
+                  <p><b>Rating: </b></p>
       
-              </div>
+                </div>
       
-              <!-- Card footer -->
-              <div class="card-footer text-muted ">
+                <!-- Card footer -->
+                <div class="card-footer text-muted ">
                   <span class="text-dark mr-3"><b>Time:</b></span>09:00 - 09:30
                 </div>
-
-              <div class="card-footer" style="margin: 0px; padding:0px">
-                <!-- Button -->
-                <div class="text-center">
-                  <a class="btn btn-unique btn-block" (click)="selectEpisode(episode)">Show Details</a>
-                </div>
-              </div>
-              
       
+                <div class="card-footer" style="margin: 0px; padding:0px">
+                  <!-- Button -->
+                  <div class="text-center">
+                    <a class="btn btn-unique btn-block" (click)="selectEpisode(episode)">Show Details</a>
+                  </div>
+                </div>
+      
+      
+              </div>
             </div>
-          </div>
-        </div>
       </div>
+      
+    </div>
+  </div>
 </div>
 
-<div *ngIf = "!showList">
+<div *ngIf="!showList">
   <app-episode-details [selectedEpisode]="selectedEpisode"></app-episode-details>
 </div>
-
-
-
-
-
-

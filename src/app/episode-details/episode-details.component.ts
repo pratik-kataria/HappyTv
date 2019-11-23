@@ -17,6 +17,11 @@ export class EpisodeDetailsComponent implements OnInit {
   ngOnInit() {
     console.log(this.selectedEpisode);
     this.generateGenreString();
+    // console.log("inside detailed component");
+    // console.log(this.selectedEpisode.airstamp.);
+    // let date:Date;
+
+    // console.log()
   }
 
   generateGenreString()
