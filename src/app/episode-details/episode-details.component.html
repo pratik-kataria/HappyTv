@@ -5,7 +5,7 @@
     </div>
     <div class="row">
       <!-- image for the show -->
-      <div class="col-md-4">
+      <div class="col-sm-12 col-md-4">
         <div *ngIf="selectedEpisode.show.image.original">
           <img class="img-fluid" [src]="selectedEpisode.show.image.original" alt="Card image cap">
 
@@ -16,20 +16,20 @@
         </div>
       </div>
       <!-- right side of the show -->
-      <div class="col-md-8">
+      <div class="col-sm-12 col-md-8">
         <!-- show details -->
         <!-- header -->
-        <div class="text-center">
+        <div class="text-center heading-font">
           <h2>{{selectedEpisode.show.name}}</h2>
         </div>
         <hr>
         <!-- details -->
         <div>
           <!-- summary -->
-          <div class="text-justify" [innerHTML]="selectedEpisode.show.summary"></div>
+          <div class="text-justify para-font" [innerHTML]="selectedEpisode.show.summary"></div>
 
           <div class="row card-footer">
-            <div class="col-md-4">
+            <div class="col-sm-12 col-md-4">
               <div clas="mt-2">
                 <span>
                   <h5><b>Premiered:</b></h5>
@@ -52,7 +52,7 @@
               </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-sm-12 col-md-4">
               <div clas="mt-2" *ngIf="selectedEpisode.show.schedule">
                 <span>
                   <h5><b>Airs On Every:</b></h5>
@@ -72,7 +72,7 @@
               <!-- rating will be here -->
             </div>
 
-            <div class="col-md-4">
+            <div class="col-sm-12 col-md-4">
               <div clas="mt-2" *ngIf="selectedEpisode.show.network">
                 <span>
                   <h5><b>Network:</b></h5>
@@ -94,7 +94,7 @@
 
       <!-- for the episode details -->
       <div class="container my-4 pt-2" id="episode-container">
-        <div class="text-center">
+        <div class="text-center" class="heading-font">
           <h2>Episode Name - <b><span>{{selectedEpisode.name}}</span></b></h2>
         </div>
         <!-- hr -->
@@ -103,7 +103,7 @@
         <div class="row mt-2">
           <div class="col-md-6">
             <!--  episode summary -->
-            <div class="text-justify" [innerHTML]="selectedEpisode.summary"></div>
+            <div class="text-justify para-font" [innerHTML]="selectedEpisode.summary"></div>
           </div>
           <div class="offset-md-2 col-md-4">
 

@@ -106,3 +106,12 @@ blockquote cite {
 blockquote cite:before {
     content: "\2014 \2009";
 }
+
+.para-font{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.heading-font{
+    font-family: 'Impact', 'Charcoal', 'sans-serif';
+}
