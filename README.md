@@ -1,6 +1,6 @@
 # HappyTv
 
-This project uses the tvmaze api (Website: http://www.tvmaze.com/api which provides the television Shows Information in the JSON form) to display television shows that are currently airing in the US.
+This project uses the tvmaze api (Website: http://www.tvmaze.com/api which provides the Television Shows Information in the JSON form) to display television shows that are currently airing in the US.
 <br><br>Navigate to https://pratik-kataria.github.io/HappyTv/shows to see the project.
 <br><br>This project is made in <b>Angular 7</b>.
 
