@@ -33,7 +33,7 @@
             <div class="view view-cascade overlay">
               <!--  if show img is available, use it-->
               <div *ngIf="episode.show.image.medium" class="img-fluid">
-                <img class="card-img-top img-fluid" [src]="episode.show.image.medium" alt="Card image cap" style="height:350px;">
+                <img class="card-img-top img-fluid" [src]="getHttpsUrl(episode.show.image.medium)" alt="Show Image" style="height:350px;">
 
               </div>
               <!-- if show img not available -->

@@ -123,6 +123,11 @@ export class EpisodeScheduleComponent implements OnInit {
   }
 
 
+  getHttpsUrl(url:string)
+  {
+    return "https:"+url.substring(5);
+  }
+
 }
 
 

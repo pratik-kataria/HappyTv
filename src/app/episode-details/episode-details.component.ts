@@ -46,5 +46,9 @@ export class EpisodeDetailsComponent implements OnInit {
     this.backEvent.emit(true);
   }
 
+  getHttpsUrl(url:string)
+  {
+    return "https:"+url.substring(5);
+  }
   
 }

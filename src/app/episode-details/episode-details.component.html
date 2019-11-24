@@ -7,7 +7,7 @@
       <!-- image for the show -->
       <div class="col-sm-12 col-md-4">
         <div *ngIf="selectedEpisode.show.image.original">
-          <img class="img-fluid" [src]="selectedEpisode.show.image.original" alt="Card image cap">
+          <img class="img-fluid" [src]="getHttpsUrl(selectedEpisode.show.image.original)" alt="Show Poster">
 
         </div>
         <!-- if show img not available -->
